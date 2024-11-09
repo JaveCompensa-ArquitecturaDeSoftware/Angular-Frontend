@@ -1,18 +1,21 @@
 <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
   <div class="bg-white p-8 rounded shadow-md w-full max-w-2xl">
     <div class="flex justify-center mb-6">
-      <img src="assets/img/logoJaveCompensa.png" alt="JaveCompensa" class="h-64 w-auto" />
+      <img src="assets/img/logoJaveCompensa.png" alt="JaveCompensa" class="h-32 w-auto" />
     </div>
     <h2 class="text-2xl font-bold mb-4 text-center">Registro de Usuario</h2>
-    <form>
+    <form (ngSubmit)="onSubmit()">
       <!-- Información Básica -->
       <div class="mb-4">
         <label for="tipoDocumento" class="block text-sm font-medium text-gray-700">Tipo de Documento</label>
         <select
           id="tipoDocumento"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="tipoDocumento"
+          name="tipoDocumento"
           required
         >
+          <option value="">Selecciona...</option>
           <option value="cc">Cédula de Ciudadanía</option>
           <option value="ce">Cédula de Extranjería</option>
           <option value="pasaporte">Pasaporte</option>
@@ -24,6 +27,8 @@
           type="text"
           id="cedula"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="cedula"
+          name="cedula"
           required
         />
       </div>
@@ -33,6 +38,8 @@
           type="text"
           id="name"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="nombre"
+          name="nombre"
           required
         />
       </div>
@@ -42,6 +49,8 @@
           type="email"
           id="email"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="email"
+          name="email"
           required
         />
       </div>
@@ -51,6 +60,8 @@
           type="tel"
           id="phone"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="phone"
+          name="phone"
           required
         />
       </div>
@@ -60,6 +71,9 @@
           type="date"
           id="fechaNacimiento"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="fechaNacimiento"
+          name="fechaNacimiento"
+          required
         />
       </div>
       <div class="mb-4">
@@ -67,7 +81,11 @@
         <select
           id="genero"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="genero"
+          name="genero"
+          required
         >
+          <option value="">Selecciona...</option>
           <option value="masculino">Masculino</option>
           <option value="femenino">Femenino</option>
           <option value="otro">Otro</option>
@@ -81,6 +99,9 @@
           type="text"
           id="address"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="address"
+          name="address"
+          required
         />
       </div>
       <div class="mb-4">
@@ -89,6 +110,9 @@
           type="text"
           id="neighborhood"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="neighborhood"
+          name="neighborhood"
+          required
         />
       </div>
       <div class="mb-4">
@@ -97,6 +121,9 @@
           type="text"
           id="city"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="city"
+          name="city"
+          required
         />
       </div>
       <div class="mb-4">
@@ -104,7 +131,11 @@
         <select
           id="stratum"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="stratum"
+          name="stratum"
+          required
         >
+          <option value="">Selecciona...</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -121,6 +152,8 @@
           type="password"
           id="password"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="password"
+          name="password"
           required
         />
       </div>
@@ -130,6 +163,8 @@
           type="password"
           id="confirmPassword"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
           required
         />
       </div>
