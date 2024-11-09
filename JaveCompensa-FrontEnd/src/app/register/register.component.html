@@ -1,0 +1,150 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-2xl">
+    <div class="flex justify-center mb-6">
+      <img src="assets/img/logoJaveCompensa.png" alt="JaveCompensa" class="h-64 w-auto" />
+    </div>
+    <h2 class="text-2xl font-bold mb-4 text-center">Registro de Usuario</h2>
+    <form>
+      <!-- Información Básica -->
+      <div class="mb-4">
+        <label for="tipoDocumento" class="block text-sm font-medium text-gray-700">Tipo de Documento</label>
+        <select
+          id="tipoDocumento"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        >
+          <option value="cc">Cédula de Ciudadanía</option>
+          <option value="ce">Cédula de Extranjería</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="cedula" class="block text-sm font-medium text-gray-700">Número de Documento</label>
+        <input
+          type="text"
+          id="cedula"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+        <input
+          type="text"
+          id="name"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+        <input
+          type="email"
+          id="email"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
+        <input
+          type="tel"
+          id="phone"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="fechaNacimiento" class="block text-sm font-medium text-gray-700">Fecha de Nacimiento</label>
+        <input
+          type="date"
+          id="fechaNacimiento"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="genero" class="block text-sm font-medium text-gray-700">Género</label>
+        <select
+          id="genero"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <!-- Información de Dirección -->
+      <div class="mb-4">
+        <label for="address" class="block text-sm font-medium text-gray-700">Dirección</label>
+        <input
+          type="text"
+          id="address"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="neighborhood" class="block text-sm font-medium text-gray-700">Barrio</label>
+        <input
+          type="text"
+          id="neighborhood"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="city" class="block text-sm font-medium text-gray-700">Ciudad</label>
+        <input
+          type="text"
+          id="city"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="stratum" class="block text-sm font-medium text-gray-700">Estrato</label>
+        <select
+          id="stratum"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+
+      <!-- Información de Seguridad -->
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar Contraseña</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+
+      <!-- Botón de Registro -->
+      <button
+        type="submit"
+        class="w-full py-2 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600"
+      >
+        Registrarse
+      </button>
+    </form>
+    <p class="mt-4 text-center">
+      ¿Ya tienes una cuenta?
+      <a routerLink="/login" class="text-blue-500 hover:underline">Inicia sesión aquí</a>
+    </p>
+  </div>
+</div>
