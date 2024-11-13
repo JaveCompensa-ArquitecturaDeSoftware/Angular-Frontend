@@ -1,57 +1,59 @@
+<p>login works!</p>
 <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-    <div class="flex justify-center mb-6">
-      <img src="assets/img/logoJaveCompensa.png" alt="JaveCompensa" class="h-32 w-auto" />
-    </div>
-    <h2 class="text-2xl font-bold mb-4 text-center">Iniciar Sesión</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div class="mb-4">
-        <label for="tipoDocumento" class="block text-sm font-medium text-gray-700">Tipo de Documento</label>
-        <select
-          id="tipoDocumento"
-          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="tipoDocumento"
-          name="tipoDocumento"
-          required
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+      <div class="flex justify-center mb-6">
+        <img src="assets/img/logoJaveCompensa.png" alt="JaveCompensa" class="h-32 w-auto" />
+      </div>
+      <h2 class="text-2xl font-bold mb-4 text-center">Iniciar Sesión</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-4">
+          <label for="tipoDocumento" class="block text-sm font-medium text-gray-700">Tipo de Documento</label>
+          <select
+            id="tipoDocumento"
+            class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            [(ngModel)]="tipoDocumento"
+            name="tipoDocumento"
+            required
+          >
+            <option value="">Selecciona...</option>
+            <option value="C.C">Cédula de Ciudadanía</option>
+            <option value="C.E">Cédula de Extranjería</option>
+            <option value="Pasaporte">Pasaporte</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="cedula" class="block text-sm font-medium text-gray-700">Número de Documento</label>
+          <input
+            type="text"
+            id="cedula"
+            class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            [(ngModel)]="cedula"
+            name="cedula"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600"
         >
-          <option value="">Selecciona...</option>
-          <option value="C.C">Cédula de Ciudadanía</option>
-          <option value="C.E">Cédula de Extranjería</option>
-          <option value="Pasaporte">Pasaporte</option>
-        </select>
-      </div>
-      <div class="mb-4">
-        <label for="cedula" class="block text-sm font-medium text-gray-700">Número de Documento</label>
-        <input
-          type="text"
-          id="cedula"
-          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="cedula"
-          name="cedula"
-          required
-        />
-      </div>
-      <div class="mb-4">
-        <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
-        <input
-          type="password"
-          id="password"
-          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="password"
-          name="password"
-          required
-        />
-      </div>
-      <button
-        type="submit"
-        class="w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600"
-      >
-        Iniciar Sesión
-      </button>
-    </form>
-    <p class="mt-4 text-center">
-      ¿No tienes una cuenta?
-      <a routerLink="/register" class="text-blue-500 hover:underline">Regístrate aquí</a>
-    </p>
+          Iniciar Sesión
+        </button>
+      </form>
+      <p class="mt-4 text-center">
+        ¿No tienes una cuenta?
+        <a routerLink="/register" class="text-blue-500 hover:underline">Regístrate aquí</a>
+      </p>
+    </div>
   </div>
-</div>
+  
