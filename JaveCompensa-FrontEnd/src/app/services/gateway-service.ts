@@ -20,6 +20,15 @@ export class GatewayService
     });
   }
 
+  // Método para enviar datos de login de usuario
+  sendLoginData(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/login`, data, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+  }
+
   // Método genérico para enviar cualquier dato a una ruta específica (POST)
   sendData(endpoint: string, data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/${endpoint}`, data, {

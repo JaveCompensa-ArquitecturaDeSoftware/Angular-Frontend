@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import { GatewayService } from '../../../../services/gateway-service';
 import {FormsModule} from '@angular/forms';
 
@@ -7,7 +7,7 @@ import {FormsModule} from '@angular/forms';
   selector: 'app-register',
   standalone: true,
   templateUrl: './register.component.html',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
@@ -75,7 +75,7 @@ export class RegisterComponent {
       return;
     }
 
-    const formData = {
+    const registerFormData = {
       tipoDocumento: this.tipoDocumento,
       cedula: this.cedula,
       nombres: this.nombres,
@@ -87,9 +87,9 @@ export class RegisterComponent {
       password: this.password
     };
 
-    console.log("Datos a enviar", formData)
+    console.log("Datos a enviar", registerFormData)
 
-    this.gatewayService.sendRegisterData(formData).subscribe(
+    this.gatewayService.sendRegisterData(registerFormData).subscribe(
       response => {
         console.log('Registro exitoso:', response);
         this.router.navigate(['/login']);

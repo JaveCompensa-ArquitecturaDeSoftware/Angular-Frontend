@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import {GatewayService} from '../../../../services/gateway-service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent {
   cedula: string = '';
   password: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private gatewayService: GatewayService) {}
 
   // Método para manejar el envío del formulario
   onSubmit() {
@@ -42,11 +43,23 @@ export class LoginComponent {
       return;
     }
 
-    // Si los datos son válidos, imprime los datos en la consola
-    console.log({
+    const loginFormData = {
       tipoDocumento: this.tipoDocumento,
       cedula: this.cedula,
       password: this.password
-    });
+    }
+
+    console.log("Datos a enviar", loginFormData)
+
+    this.gatewayService.sendLoginData(loginFormData).subscribe(
+      response => {
+        console.log('Login exitoso:', response);
+        // this.router.navigate(['/login']); TODO: Redirigir a la página de inicio según su rol.
+      },
+      error => {
+        console.error('Error en el login:', error);
+        alert("Error en el login, por favor intenta de nuevo.");
+      }
+    );
   }
 }
