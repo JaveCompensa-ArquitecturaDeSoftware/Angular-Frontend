@@ -96,6 +96,7 @@ export class RegisterComponent {
       },
       error => {
         console.error('Error en el registro:', error);
+        alert("Error en el registro, por favor intenta de nuevo.");
       }
     );
   }
