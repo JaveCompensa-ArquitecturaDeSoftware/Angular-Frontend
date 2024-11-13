@@ -1,36 +1,29 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   templateUrl: './register.component.html',
-  imports: [
-    FormsModule
-  ],
+  imports: [FormsModule],
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   tipoDocumento: string = '';
   cedula: string = '';
-  nombre: string = '';
+  nombres: string = '';
+  apellidos: string = '';
   email: string = '';
   phone: string = '';
-  fechaNacimiento: string = '';
-  genero: string = '';
-  address: string = '';
-  neighborhood: string = '';
-  city: string = '';
-  stratum: string = '';
+  nitEmpresa: string = '';
+  ingresos: number | null = null;
   password: string = '';
   confirmPassword: string = '';
 
   constructor(private router: Router) {}
 
-  // Método para manejar el envío del formulario
   onSubmit() {
-    // Validaciones
     if (!this.tipoDocumento) {
       alert('Por favor, selecciona un tipo de documento.');
       return;
@@ -41,8 +34,13 @@ export class RegisterComponent {
       return;
     }
 
-    if (!this.nombre || this.nombre.trim().length < 3) {
-      alert('El nombre completo debe tener al menos 3 caracteres.');
+    if (!this.nombres || this.nombres.trim().length < 3) {
+      alert('Los nombres deben tener al menos 3 caracteres.');
+      return;
+    }
+
+    if (!this.apellidos || this.apellidos.trim().length < 3) {
+      alert('Los apellidos deben tener al menos 3 caracteres.');
       return;
     }
 
@@ -56,33 +54,13 @@ export class RegisterComponent {
       return;
     }
 
-    if (!this.fechaNacimiento) {
-      alert('Por favor, selecciona una fecha de nacimiento.');
+    if (!this.nitEmpresa || this.nitEmpresa.trim().length < 9) {
+      alert('El NIT de la empresa debe tener al menos 9 caracteres.');
       return;
     }
 
-    if (!this.genero) {
-      alert('Por favor, selecciona un género.');
-      return;
-    }
-
-    if (!this.address || this.address.trim().length < 5) {
-      alert('La dirección debe tener al menos 5 caracteres.');
-      return;
-    }
-
-    if (!this.neighborhood || this.neighborhood.trim().length < 3) {
-      alert('El barrio debe tener al menos 3 caracteres.');
-      return;
-    }
-
-    if (!this.city || this.city.trim().length < 3) {
-      alert('La ciudad debe tener al menos 3 caracteres.');
-      return;
-    }
-
-    if (!this.stratum || !['1', '2', '3', '4', '5', '6'].includes(this.stratum)) {
-      alert('Por favor, selecciona un estrato válido.');
+    if (this.ingresos === null || this.ingresos <= 0) {
+      alert('Por favor, ingresa un valor válido para los ingresos mensuales.');
       return;
     }
 
@@ -96,19 +74,15 @@ export class RegisterComponent {
       return;
     }
 
-    // Si todo es válido, imprime los datos en la consola
     console.log({
       tipoDocumento: this.tipoDocumento,
       cedula: this.cedula,
-      nombre: this.nombre,
+      nombres: this.nombres,
+      apellidos: this.apellidos,
       email: this.email,
       phone: this.phone,
-      fechaNacimiento: this.fechaNacimiento,
-      genero: this.genero,
-      address: this.address,
-      neighborhood: this.neighborhood,
-      city: this.city,
-      stratum: this.stratum,
+      nitEmpresa: this.nitEmpresa,
+      ingresos: this.ingresos,
       password: this.password
     });
   }

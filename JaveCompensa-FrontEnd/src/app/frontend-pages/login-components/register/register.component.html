@@ -33,13 +33,24 @@
         />
       </div>
       <div class="mb-4">
-        <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+        <label for="nombres" class="block text-sm font-medium text-gray-700">Nombres</label>
         <input
           type="text"
-          id="name"
+          id="nombres"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="nombre"
-          name="nombre"
+          [(ngModel)]="nombres"
+          name="nombres"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="apellidos" class="block text-sm font-medium text-gray-700">Apellidos</label>
+        <input
+          type="text"
+          id="apellidos"
+          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          [(ngModel)]="apellidos"
+          name="apellidos"
           required
         />
       </div>
@@ -66,83 +77,26 @@
         />
       </div>
       <div class="mb-4">
-        <label for="fechaNacimiento" class="block text-sm font-medium text-gray-700">Fecha de Nacimiento</label>
-        <input
-          type="date"
-          id="fechaNacimiento"
-          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="fechaNacimiento"
-          name="fechaNacimiento"
-          required
-        />
-      </div>
-      <div class="mb-4">
-        <label for="genero" class="block text-sm font-medium text-gray-700">Género</label>
-        <select
-          id="genero"
-          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="genero"
-          name="genero"
-          required
-        >
-          <option value="">Selecciona...</option>
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-          <option value="otro">Otro</option>
-        </select>
-      </div>
-
-      <!-- Información de Dirección -->
-      <div class="mb-4">
-        <label for="address" class="block text-sm font-medium text-gray-700">Dirección</label>
+        <label for="nitEmpresa" class="block text-sm font-medium text-gray-700">NIT de la Empresa</label>
         <input
           type="text"
-          id="address"
+          id="nitEmpresa"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="address"
-          name="address"
+          [(ngModel)]="nitEmpresa"
+          name="nitEmpresa"
           required
         />
       </div>
       <div class="mb-4">
-        <label for="neighborhood" class="block text-sm font-medium text-gray-700">Barrio</label>
+        <label for="ingresos" class="block text-sm font-medium text-gray-700">Ingresos Mensuales</label>
         <input
-          type="text"
-          id="neighborhood"
+          type="number"
+          id="ingresos"
           class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="neighborhood"
-          name="neighborhood"
+          [(ngModel)]="ingresos"
+          name="ingresos"
           required
         />
-      </div>
-      <div class="mb-4">
-        <label for="city" class="block text-sm font-medium text-gray-700">Ciudad</label>
-        <input
-          type="text"
-          id="city"
-          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="city"
-          name="city"
-          required
-        />
-      </div>
-      <div class="mb-4">
-        <label for="stratum" class="block text-sm font-medium text-gray-700">Estrato</label>
-        <select
-          id="stratum"
-          class="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          [(ngModel)]="stratum"
-          name="stratum"
-          required
-        >
-          <option value="">Selecciona...</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
       </div>
 
       <!-- Información de Seguridad -->
