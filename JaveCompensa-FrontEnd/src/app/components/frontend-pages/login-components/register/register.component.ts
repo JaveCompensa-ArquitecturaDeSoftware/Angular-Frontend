@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { GatewayService } from '../../../../services/gateway-service';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,7 @@ export class RegisterComponent {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private gatewayService: GatewayService) {}
 
   onSubmit() {
     if (!this.tipoDocumento) {
@@ -74,7 +75,7 @@ export class RegisterComponent {
       return;
     }
 
-    console.log({
+    const formData = {
       tipoDocumento: this.tipoDocumento,
       cedula: this.cedula,
       nombres: this.nombres,
@@ -84,6 +85,18 @@ export class RegisterComponent {
       nitEmpresa: this.nitEmpresa,
       ingresos: this.ingresos,
       password: this.password
-    });
+    };
+
+    console.log("Datos a enviar", formData)
+
+    this.gatewayService.sendRegisterData(formData).subscribe(
+      response => {
+        console.log('Registro exitoso:', response);
+        this.router.navigate(['/login']);
+      },
+      error => {
+        console.error('Error en el registro:', error);
+      }
+    );
   }
 }
