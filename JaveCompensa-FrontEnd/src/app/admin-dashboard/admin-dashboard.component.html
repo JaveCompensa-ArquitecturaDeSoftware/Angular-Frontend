@@ -1,1 +1,36 @@
-<p>admin-dashboard works!</p>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-4xl">
+    <h2 class="text-2xl font-bold mb-4 text-center">Dashboard del Administrador de Sede</h2>
+
+    <!-- Botón para agregar un nuevo servicio -->
+    <div class="mb-6 flex justify-end">
+      <button
+        (click)="addService()"
+        class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600"
+      >
+        Agregar Servicio
+      </button>
+    </div>
+
+    <!-- Lista de servicios -->
+    <ul class="space-y-4">
+      <li *ngFor="let service of services" class="flex items-center justify-between p-4 border rounded-md">
+        <span class="font-semibold">{{ service.name }}</span>
+        <div class="space-x-2">
+          <button
+            (click)="editService(service)"
+            class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          >
+            Editar
+          </button>
+          <button
+            (click)="deleteService(service)"
+            class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
+          >
+            Eliminar
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
