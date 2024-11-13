@@ -23,7 +23,6 @@ export function kcFactory(kcService: KeycloakService){
   declarations: [
     AppComponent,
     MenuPrincipalClienteComponent,
-    AdminDashboardComponent,
     HomeComponent,
     NavBarComponent,
     RegisterComponent,
@@ -35,7 +34,8 @@ export function kcFactory(kcService: KeycloakService){
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AdminDashboardComponent
   ],
   providers: [
     HttpClient,
@@ -51,7 +51,7 @@ export function kcFactory(kcService: KeycloakService){
     useFactory: kcFactory,
     multi: true
   }
-    
+
 ],
   bootstrap: [AppComponent]
 })
