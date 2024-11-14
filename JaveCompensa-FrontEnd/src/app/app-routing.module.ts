@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { PaginaErrorComponent } from './pagina-error/pagina-error.component';
+import { PaginaErrorComponent } from './components/pagina-error/pagina-error.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [

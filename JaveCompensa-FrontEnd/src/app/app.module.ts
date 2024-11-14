@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { KeycloakService } from './keycloak/keycloak.service';
+import { KeycloakService } from './authentication/keycloak/keycloak.service';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
-import { HttpTokenInterceptor } from './interceptor/http-token.interceptor';
+import { HttpTokenInterceptor } from './authentication/interceptor/http-token.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { HomeComponent } from './components/home/home.component';

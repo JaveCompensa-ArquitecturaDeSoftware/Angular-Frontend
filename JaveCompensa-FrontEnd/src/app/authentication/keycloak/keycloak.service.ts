@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import Keycloak from 'keycloak-js';
 import { UserProfile } from './user-profile';
 import { Router } from '@angular/router';
-import { environment } from '../../environments/environment.development';
-import { ErrorService } from '../backEndServices/error.service';
+import { environment } from '../../../environments/environment.development';
+import { ErrorService } from '../../services/backEndServices/error.service';
 
 @Injectable({
   providedIn: 'root',
@@ -76,7 +76,7 @@ export class KeycloakService {
         const userType = this._profile.attributes?.rol ? this._profile.attributes.rol[0] : undefined;
         console.log("Perfil: " + userType);
         console.log('%c' + "Perfil del usuario:"  + userType, 'background-color: #494; color: white;');
-        
+
         if (userType == 'Administrador') {
           this.router.navigate(['']);
         } else if (userType == 'Titular') {
