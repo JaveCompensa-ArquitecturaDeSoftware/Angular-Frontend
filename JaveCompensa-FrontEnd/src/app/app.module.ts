@@ -14,6 +14,7 @@ import { NavBarComponent } from './components/extras/nav-bar/nav-bar.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { HeroComponent } from './components/extras/hero/hero.component';
 import { ServicesComponent } from './components/extras/services/services.component';
+import { TestimonialsComponent } from './components/extras/testimonials/testimonials.component';
 
 export function kcFactory(kcService: KeycloakService){
   return () => kcService.init();
@@ -26,6 +27,7 @@ export function kcFactory(kcService: KeycloakService){
     UserDashboardComponent,
     HeroComponent,
     ServicesComponent,
+    TestimonialsComponent,
   ],
   imports: [
     BrowserModule,
