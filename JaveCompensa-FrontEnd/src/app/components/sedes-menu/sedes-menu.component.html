@@ -1,7 +1,32 @@
 <!-- Navbar -->
 <app-nav-bar></app-nav-bar>
 
-<p>sedes-menu works!</p>
+<div class="max-w-7xl mx-auto py-10 px-4">
+  <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">Selecciona tu Sede</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
+    <!-- Tarjeta de cada sede -->
+    <div *ngFor="let sede of sedes" class="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 w-full md:w-[90%] lg:w-[80%] xl:w-[70%] max-w-4xl mx-auto">
+      <!-- Información de la Sede -->
+      <div class="p-6 flex flex-col justify-between w-full md:w-1/2">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ sede.title }}</h3>
+          <p class="text-lg text-gray-700">{{ sede.name }}</p>
+          <p class="text-gray-600">{{ sede.address }}</p>
+          <p class="text-gray-600 mb-4">{{ sede.city }}</p>
+        </div>
+        <button (click)="selectSede(sede.name)" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">
+          Reservar aquí
+        </button>
+      </div>
+
+      <!-- Imagen de la Sede -->
+      <div class="w-full md:w-1/2 h-48 md:h-auto">
+        <img [src]="sede.image" alt="Foto de la Sede" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <app-footer></app-footer>

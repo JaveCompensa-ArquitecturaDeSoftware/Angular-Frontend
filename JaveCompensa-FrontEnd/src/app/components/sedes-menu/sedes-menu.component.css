@@ -1,0 +1,19 @@
+.bg-white {
+  background-color: #ffffff;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
