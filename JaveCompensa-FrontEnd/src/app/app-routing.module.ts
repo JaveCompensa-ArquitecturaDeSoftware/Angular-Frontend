@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { PaginaErrorComponent } from './components/pagina-error/pagina-error.component';
 import { HomeComponent } from './components/home/home.component';
-import {SedesMenuComponent} from "./components/sedes-menu/sedes-menu.component";
+import {SedesMenuComponent} from "./components/menus/sedes-menu/sedes-menu.component";
 import {ContactPageComponent} from "./components/contact-page/contact-page.component";
 
 const routes: Routes = [
