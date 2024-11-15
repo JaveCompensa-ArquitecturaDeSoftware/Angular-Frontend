@@ -15,6 +15,7 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { HeroComponent } from './components/extras/hero/hero.component';
 import { ServicesComponent } from './components/extras/services/services.component';
 import { TestimonialsComponent } from './components/extras/testimonials/testimonials.component';
+import { SedeSelectorComponent } from './components/sede-selector/sede-selector.component';
 
 export function kcFactory(kcService: KeycloakService){
   return () => kcService.init();
@@ -28,6 +29,7 @@ export function kcFactory(kcService: KeycloakService){
     HeroComponent,
     ServicesComponent,
     TestimonialsComponent,
+    SedeSelectorComponent,
   ],
   imports: [
     BrowserModule,

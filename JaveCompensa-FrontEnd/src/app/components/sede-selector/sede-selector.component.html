@@ -1,0 +1,32 @@
+<div class="relative bg-gray-100 py-8 px-4">
+  <!-- Título del Carrusel -->
+  <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Nuestras Sedes</h2>
+
+  <!-- Controles de Navegación -->
+  <div class="absolute top-1/2 left-0 transform -translate-y-1/2">
+    <button (click)="previous()" [disabled]="visibleStartIndex === 0" class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-transform duration-300 transform hover:scale-110">
+      &#8592;
+    </button>
+  </div>
+  <div class="absolute top-1/2 right-0 transform -translate-y-1/2">
+    <button (click)="next()" [disabled]="visibleStartIndex + itemsPerPage >= sedes.length" class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-transform duration-300 transform hover:scale-110">
+      &#8594;
+    </button>
+  </div>
+
+  <!-- Carrusel de Sedes -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div *ngFor="let sede of visibleSedes" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+      <img [src]="sede.image" alt="Foto de la Sede" class="w-full h-40 object-cover hover:opacity-90 transition-opacity duration-300">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-300">{{ sede.title }}</h3>
+        <p class="text-lg text-gray-700">{{ sede.name }}</p>
+        <p class="text-gray-600">{{ sede.address }}</p>
+        <p class="text-gray-600 mb-4">{{ sede.city }}</p>
+        <button (click)="onReserve(sede.name)" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105">
+          Reservar aquí
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
