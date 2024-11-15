@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sedes-menu',
   templateUrl: './sedes-menu.component.html',
-  styleUrl: './sedes-menu.component.css'
+  styleUrls: ['./sedes-menu.component.css']
 })
 export class SedesMenuComponent {
+  constructor(private router: Router) {}
+
   // Arreglo de sedes
   sedes = [
     {
@@ -82,7 +85,6 @@ export class SedesMenuComponent {
 
   selectSede(sedeName: string) {
     alert(`Menu de Sedes - Presionada la sede ${sedeName}`);
-
-    /* TODO: Implementar la lógica para seleccionar las instalaciones de ESA sede. */
+    this.router.navigate(['/instalaciones-menu'], { queryParams: { sede: sedeName } });
   }
 }
