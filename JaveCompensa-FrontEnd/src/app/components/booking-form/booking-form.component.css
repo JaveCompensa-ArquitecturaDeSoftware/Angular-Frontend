@@ -1,0 +1,23 @@
+.bg-white {
+  background-color: #ffffff;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.text-gray-700 {
+  color: #4b5563;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
