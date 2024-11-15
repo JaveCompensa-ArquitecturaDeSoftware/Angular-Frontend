@@ -15,3 +15,27 @@ Blanco Nieve: #FFFAFA
 Blanco Crema: #FFFDD0
 Blanco Hueso: #F5F5DC
 */
+
+html, body {
+  height: 100%; /* Asegura que el cuerpo de la página use toda la altura */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  flex: 1; /* Este toma todo el espacio disponible */
+}
+
+footer {
+  background-color: #1f2937; /* Color de fondo del footer */
+  color: #ffffff; /* Texto blanco */
+  text-align: center;
+  padding: 1rem 0;
+}
