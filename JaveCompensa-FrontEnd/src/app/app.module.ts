@@ -18,6 +18,7 @@ import { TestimonialsComponent } from './components/extras/testimonials/testimon
 import { SedeSelectorComponent } from './components/sede-selector/sede-selector.component';
 import { FooterComponent } from './components/extras/footer/footer.component';
 import { SedesMenuComponent } from './components/sedes-menu/sedes-menu.component';
+import { ContactPageComponent } from './components/contact-page/contact-page.component';
 
 export function kcFactory(kcService: KeycloakService){
   return () => kcService.init();
@@ -34,6 +35,7 @@ export function kcFactory(kcService: KeycloakService){
     SedeSelectorComponent,
     FooterComponent,
     SedesMenuComponent,
+    ContactPageComponent,
   ],
   imports: [
     BrowserModule,
