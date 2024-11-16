@@ -8,10 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpTokenInterceptor } from './authentication/interceptor/http-token.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminDashboardComponent } from './components/dashboards/admin-dashboard/admin-dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/extras/nav-bar/nav-bar.component';
-import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { HeroComponent } from './components/extras/hero/hero.component';
 import { ServicesComponent } from './components/extras/services/services.component';
 import { TestimonialsComponent } from './components/extras/testimonials/testimonials.component';
@@ -31,7 +30,6 @@ export function kcFactory(kcService: KeycloakService){
     AppComponent,
     HomeComponent,
     NavBarComponent,
-    UserDashboardComponent,
     HeroComponent,
     ServicesComponent,
     TestimonialsComponent,

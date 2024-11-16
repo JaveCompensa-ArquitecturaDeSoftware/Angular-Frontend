@@ -8,6 +8,7 @@ import {ContactPageComponent} from "./components/contact-page/contact-page.compo
 import {InstalacionesMenuComponent} from "./components/menus/instalaciones-menu/instalaciones-menu.component";
 import {BookingFormComponent} from "./components/booking-form/booking-form.component";
 import {EventsMenuComponent} from "./components/menus/events-menu/events-menu.component";
+import {AdminDashboardComponent} from "./components/dashboards/admin-dashboard/admin-dashboard.component";
 
 const routes: Routes = [
   { path: 'error', component: PaginaErrorComponent},
@@ -23,6 +24,11 @@ const routes: Routes = [
 
   /* Pagina para confirmar la reserva */
   { path: 'booking-form', component: BookingFormComponent },
+
+  /* Pagina del dashboard del administrador */
+  { path: 'admin-dashboard', component: AdminDashboardComponent },
+
+
 
   /* Pagina de contacto */
   { path: 'contact', component: ContactPageComponent },

@@ -46,10 +46,11 @@ export class NavBarComponent {
     console.log('Accediendo a Tu Perfil - Rol: ' + this.userProfile?.attributes?.rol);
 
 
-
     if (this.userProfile?.attributes?.rol == 'Administrador')
     {
-      console.log('Dashboard de Administrador');
+      console.log('Redireccionando a Dashboard de Administrador');
+
+      this.router.navigate(['/admin-dashboard']);
     }
     else if (this.userProfile?.attributes?.rol == 'Titular')
     {
