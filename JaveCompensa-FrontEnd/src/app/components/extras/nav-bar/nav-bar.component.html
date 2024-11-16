@@ -17,8 +17,8 @@
               <a routerLink="/sedes-menu" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
                 Admira nuestras sedes
               </a>
-              <a routerLink="/services" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
-                Servicios
+              <a routerLink="/events" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
+                Próximos Eventos
               </a>
               <a routerLink="/contact" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
                 Contacto
@@ -33,7 +33,7 @@
                   </button>
                 </div>
               </div>
-              
+
               <!-- Si no está logueado -->
               <a *ngIf="!userProfile" (click)="checkLogin()" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
                 {{ loginButtonText }}

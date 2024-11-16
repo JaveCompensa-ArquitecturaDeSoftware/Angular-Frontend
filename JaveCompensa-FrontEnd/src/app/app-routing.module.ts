@@ -7,6 +7,7 @@ import {SedesMenuComponent} from "./components/menus/sedes-menu/sedes-menu.compo
 import {ContactPageComponent} from "./components/contact-page/contact-page.component";
 import {InstalacionesMenuComponent} from "./components/menus/instalaciones-menu/instalaciones-menu.component";
 import {BookingFormComponent} from "./components/booking-form/booking-form.component";
+import {EventsMenuComponent} from "./components/menus/events-menu/events-menu.component";
 
 const routes: Routes = [
   { path: 'error', component: PaginaErrorComponent},
@@ -25,6 +26,9 @@ const routes: Routes = [
 
   /* Pagina de contacto */
   { path: 'contact', component: ContactPageComponent },
+
+  /* Pagina de proximos eventos */
+  { path: 'events', component: EventsMenuComponent },
 
   /* Pagina default */
   { path: '**', component: HomeComponent }
