@@ -1,46 +1,48 @@
 <nav class="bg-gray-900 border-b border-gray-700 fixed top-0 left-0 w-full z-10">
-    <div class="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8">
-      <div class="flex h-20 items-center justify-between">
-        <div class="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
-          <!-- Logo -->
-          <a routerLink="/home" class="flex flex-shrink-0 items-center mr-4">
-            <img src="../../../../assets/img/logoJaveCompensa.png" alt="JaveCompensa" class="h-10 w-auto" height="2000" width="2000"/>
-            <span class="hidden md:block text-gray-100 text-2xl font-bold ml-2">
-              JaveCompensa
-            </span>
-          </a>
-          <div class="md:ml-auto">
-            <div class="flex space-x-2">
-              <a routerLink="/home" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
-                Home
-              </a>
-              <a routerLink="/sedes-menu" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
-                Admira nuestras sedes
-              </a>
-              <a routerLink="/events" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
-                Próximos Eventos
-              </a>
-              <a routerLink="/contact" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
-                Contacto
-              </a>
-              <div *ngIf="userProfile" class="relative">
-                <button (click)="toggleDropdown()" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
-                  {{ loginButtonText }}
+  <div class="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8">
+    <div class="flex h-20 items-center justify-between">
+      <div class="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
+        <!-- Logo -->
+        <a routerLink="/home" class="flex flex-shrink-0 items-center mr-4">
+          <img src="../../../../assets/img/logoJaveCompensa.png" alt="JaveCompensa" class="h-10 w-auto" height="2000" width="2000"/>
+          <span class="hidden md:block text-gray-100 text-2xl font-bold ml-2">
+            JaveCompensa
+          </span>
+        </a>
+        <div class="md:ml-auto">
+          <div class="flex space-x-2">
+            <a routerLink="/home" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
+              Home
+            </a>
+            <a routerLink="/sedes-menu" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
+              Admira nuestras sedes
+            </a>
+            <a routerLink="/events" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
+              Próximos Eventos
+            </a>
+            <a routerLink="/contact" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
+              Contacto
+            </a>
+            <div *ngIf="userProfile" class="relative">
+              <button (click)="toggleDropdown()" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
+                {{ 'Bienvenido, ' + loginButtonText }}
+              </button>
+              <div *ngIf="showDropdown" class="absolute right-0 mt-2 w-48 rounded-md bg-gray-800 text-white shadow-lg">
+                <button (click)="goToProfile()" class="flex items-center w-full text-left px-4 py-2 text-sm hover:bg-gray-700">
+                  <i class="pi pi-user mr-2"></i> Tu Perfil
                 </button>
-                <div *ngIf="showDropdown" class="absolute right-0 mt-2 w-48 rounded-md bg-gray-800 text-white shadow-lg">
-                  <button (click)="logout()" class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-700">
-                    Logout
-                  </button>
-                </div>
+                <button (click)="logout()" class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-700">
+                  <i class="pi pi-sign-out mr-2"></i> Logout
+                </button>
               </div>
-
-              <!-- Si no está logueado -->
-              <a *ngIf="!userProfile" (click)="checkLogin()" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
-                {{ loginButtonText }}
-              </a>
             </div>
+            <!-- Si no está logueado -->
+            <a *ngIf="!userProfile" (click)="checkLogin()" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
+              <i class="pi pi-sign-in mr-2"></i> {{ loginButtonText }}
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>

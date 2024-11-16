@@ -6,7 +6,7 @@ import { UserProfile } from '../../../authentication/keycloak/user-profile';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrl: './nav-bar.component.css'
+  styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
   userProfile: UserProfile | undefined;
@@ -20,7 +20,7 @@ export class NavBarComponent {
   ) {}
 
   ngOnInit(): void {
-    console.log("Buscando si esta logeado...");
+    console.log("Buscando si está logeado...");
     this.userProfile = this.keycloakService.profile;
     if (this.userProfile != undefined) {
       if (this.userProfile.firstName) {
@@ -35,13 +35,16 @@ export class NavBarComponent {
 
   checkLogin() {
     if (this.userProfile == undefined) {
-        console.log("no estás logeado, redireccionando a login");
-        this.router.navigate(['/login']).then(() => {
-            this.keycloakService.init();
-        });
+      console.log("No estás logeado, redireccionando a login");
+      this.router.navigate(['/login']).then(() => {
+        this.keycloakService.init();
+      });
     }
-}
+  }
 
+  goToProfile() {
+    alert('Accediendo a Tu Perfil...');
+  }
 
   logout() {
     if (!this.keycloakService.keycloak) {
@@ -50,5 +53,4 @@ export class NavBarComponent {
     }
     return this.keycloakService.logout();
   }
-  
 }
