@@ -21,6 +21,7 @@ import { ContactPageComponent } from './components/contact-page/contact-page.com
 import { InstalacionesMenuComponent } from './components/menus/instalaciones-menu/instalaciones-menu.component';
 import { BookingFormComponent } from './components/booking-form/booking-form.component';
 import { EventsMenuComponent } from './components/menus/events-menu/events-menu.component';
+import { BookingPaymentComponent } from './components/booking-payment/booking-payment.component';
 
 export function kcFactory(kcService: KeycloakService){
   return () => kcService.init();
@@ -41,6 +42,7 @@ export function kcFactory(kcService: KeycloakService){
     InstalacionesMenuComponent,
     BookingFormComponent,
     EventsMenuComponent,
+    BookingPaymentComponent,
   ],
   imports: [
     BrowserModule,
