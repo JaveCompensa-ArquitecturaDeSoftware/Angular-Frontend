@@ -14,9 +14,20 @@ export class AdminDashboardComponent implements OnInit {
   searchInstallations = '';
   searchUsers = '';
 
-  events = [{ name: 'Concierto de Rock' }, { name: 'Feria Gastronómica' }];
-  installations = [{ name: 'Piscina Olímpica' }, { name: 'Cancha de Tenis' }];
-  users = [{ name: 'Juan Pérez' }, { name: 'María López' }];
+  events = [
+    { name: 'Concierto de Rock', capacity: 200, occupation: 150 },
+    { name: 'Feria Gastronómica', capacity: 300, occupation: 120 }
+  ];
+
+  installations = [
+    { name: 'Piscina Olímpica', capacity: 50, occupation: 20 },
+    { name: 'Cancha de Tenis', capacity: 10, occupation: 5 }
+  ];
+
+  users = [
+    { id: '001', name: 'Juan Pérez' },
+    { id: '002', name: 'María López' }
+  ];
 
   constructor(private keycloakService: KeycloakService) {}
 
