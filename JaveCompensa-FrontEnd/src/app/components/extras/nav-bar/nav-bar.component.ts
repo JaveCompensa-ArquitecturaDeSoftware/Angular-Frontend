@@ -43,7 +43,32 @@ export class NavBarComponent {
   }
 
   goToProfile() {
-    alert('Accediendo a Tu Perfil...');
+    console.log('Accediendo a Tu Perfil - Rol: ' + this.userProfile?.attributes?.rol);
+
+
+
+    if (this.userProfile?.attributes?.rol == 'Administrador')
+    {
+      console.log('Dashboard de Administrador');
+    }
+    else if (this.userProfile?.attributes?.rol == 'Titular')
+    {
+      console.log('Dashboard de Usuario');
+    }
+    else if (this.userProfile?.attributes?.rol == 'Beneficiario')
+    {
+      alert('Dashboard beneficiario? O dashboard del titular? --> Como sería la lógica?') // TODO: ???
+    }
+    else
+    {
+      console.log("No estás logeado, redireccionando a login");
+
+      this.router.navigate(['/login']).then(() => {
+        this.keycloakService.init();
+      });
+    }
+
+
   }
 
   logout() {
