@@ -1,5 +1,10 @@
 <app-nav-bar></app-nav-bar>
 
+<head>
+  <title>Reservar Instalación</title>
+  <script src="https://checkout.bold.co/library/boldPaymentButton.js"></script>
+</head>
+
 <div class="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-6 pt-28">
   <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Reservar Instalación</h2>
   <form (ngSubmit)="submitForm()" #bookingForm="ngForm">
@@ -57,12 +62,10 @@
       />
     </div>
 
-    <!-- Botón de Enviar -->
-    <button
-      type="submit"
-      class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition duration-300 ease-in-out"
-    >
-      Confirmar Reserva
-    </button>
+    <!-- Botón de Pagos Bold -->
+    <script
+      data-bold-button
+      data-api-key="LLAVE_DE_IDENTIDAD"
+    ></script>
   </form>
 </div>
