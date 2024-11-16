@@ -1,4 +1,4 @@
-<nav class="bg-gray-900 border-b border-gray-700">
+<nav class="bg-gray-900 border-b border-gray-700 fixed top-0 left-0 w-full z-10">
     <div class="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
         <div class="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
@@ -23,8 +23,20 @@
               <a routerLink="/contact" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
                 Contacto
               </a>
-              <a routerLink="/login" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
-                LogIn/Registrarse
+              <div *ngIf="userProfile" class="relative">
+                <button (click)="toggleDropdown()" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
+                  {{ loginButtonText }}
+                </button>
+                <div *ngIf="showDropdown" class="absolute right-0 mt-2 w-48 rounded-md bg-gray-800 text-white shadow-lg">
+                  <button (click)="logout()" class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-700">
+                    Logout
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Si no está logueado -->
+              <a *ngIf="!userProfile" (click)="checkLogin()" routerLinkActive="bg-gray-700 text-white" class="text-gray-100 hover:bg-gray-800 rounded-md px-3 py-2">
+                {{ loginButtonText }}
               </a>
             </div>
           </div>

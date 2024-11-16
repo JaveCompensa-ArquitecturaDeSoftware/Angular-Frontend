@@ -36,6 +36,11 @@ export class KeycloakService {
 
   async init() {
     console.log('Authenticating...');
+    console.log('URL completa:', window.location.href);
+    if (window.location.href === 'http://localhost:4200/') {
+      console.log('Ruta actual:', this.router.url);
+      return;
+    }
     try {
       this.authenticated = await this.keycloak
         .init({
