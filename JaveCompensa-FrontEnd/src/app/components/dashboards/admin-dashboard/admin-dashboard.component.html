@@ -1,36 +1,124 @@
-<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-  <div class="bg-white p-8 rounded shadow-md w-full max-w-4xl">
-    <h2 class="text-2xl font-bold mb-4 text-center">Dashboard del Administrador de Sede</h2>
+<!-- Navbar -->
+<app-nav-bar></app-nav-bar>
 
-    <!-- Botón para agregar un nuevo servicio -->
-    <div class="mb-6 flex justify-end">
+<div class="main-content bg-gray-100 min-h-screen">
+  <!-- Panel del Administrador -->
+  <div class="bg-gray-900 text-white p-6 flex items-center justify-between pt-28">
+    <div class="flex items-center">
+      <img
+        [src]="'assets/img/dashboards/admin-placeholder.jpg'"
+        alt="Administrador"
+        class="h-20 w-20 rounded-full mr-4"
+      />
+      <div>
+        <h2 class="text-2xl font-bold">Administrador: {{ userProfile?.firstName }} {{ userProfile?.lastName }}</h2>
+        <p class="text-gray-400">Sede: JaveCompensa Centro</p>
+      </div>
+    </div>
+    <button
+      (click)="viewReports()"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold transition duration-300"
+    >
+      Ver Reportes
+    </button>
+  </div>
+
+  <!-- Listas -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+    <!-- Lista de Eventos -->
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">Eventos</h3>
+      <div class="mb-4">
+        <input
+          type="text"
+          placeholder="Buscar evento..."
+          class="w-full border border-gray-300 rounded-md p-2"
+          [(ngModel)]="searchEvents"
+        />
+      </div>
+      <ul class="space-y-4 overflow-y-auto max-h-96">
+        <li
+          *ngFor="let evento of filteredEvents()"
+          class="flex justify-between items-center border-b pb-2"
+        >
+          <span>{{ evento.name }}</span>
+          <div class="space-x-2">
+            <button (click)="viewEvent(evento)" class="text-blue-600">Ver</button>
+            <button (click)="editEvent(evento)" class="text-yellow-600">Editar</button>
+            <button (click)="deleteEvent(evento)" class="text-red-600">Eliminar</button>
+          </div>
+        </li>
+      </ul>
       <button
-        (click)="addService()"
-        class="px-4 py-2 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600"
+        (click)="createEvent()"
+        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mt-4"
       >
-        Agregar Servicio
+        Crear Nuevo Evento
       </button>
     </div>
 
-    <!-- Lista de servicios -->
-    <ul class="space-y-4">
-      <li *ngFor="let service of services" class="flex items-center justify-between p-4 border rounded-md">
-        <span class="font-semibold">{{ service.name }}</span>
-        <div class="space-x-2">
-          <button
-            (click)="editService(service)"
-            class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-          >
-            Editar
-          </button>
-          <button
-            (click)="deleteService(service)"
-            class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
-          >
-            Eliminar
-          </button>
-        </div>
-      </li>
-    </ul>
+    <!-- Lista de Instalaciones -->
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">Instalaciones</h3>
+      <div class="mb-4">
+        <input
+          type="text"
+          placeholder="Buscar instalación..."
+          class="w-full border border-gray-300 rounded-md p-2"
+          [(ngModel)]="searchInstallations"
+        />
+      </div>
+      <ul class="space-y-4 overflow-y-auto max-h-96">
+        <li
+          *ngFor="let instalacion of filteredInstallations()"
+          class="flex justify-between items-center border-b pb-2"
+        >
+          <span>{{ instalacion.name }}</span>
+          <div class="space-x-2">
+            <button (click)="viewInstallation(instalacion)" class="text-blue-600">Ver</button>
+            <button (click)="editInstallation(instalacion)" class="text-yellow-600">Editar</button>
+            <button (click)="deleteInstallation(instalacion)" class="text-red-600">Eliminar</button>
+          </div>
+        </li>
+      </ul>
+      <button
+        (click)="createInstallation()"
+        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mt-4"
+      >
+        Crear Nueva Instalación
+      </button>
+    </div>
+
+    <!-- Lista de Usuarios -->
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">Usuarios Registrados</h3>
+      <div class="mb-4">
+        <input
+          type="text"
+          placeholder="Buscar usuario..."
+          class="w-full border border-gray-300 rounded-md p-2"
+          [(ngModel)]="searchUsers"
+        />
+      </div>
+      <ul class="space-y-4 overflow-y-auto max-h-96">
+        <li
+          *ngFor="let usuario of filteredUsers()"
+          class="flex justify-between items-center border-b pb-2"
+        >
+          <span>{{ usuario.name }}</span>
+          <div class="space-x-2">
+            <button (click)="viewUser(usuario)" class="text-blue-600">Ver</button>
+            <button (click)="editUser(usuario)" class="text-yellow-600">Editar</button>
+            <button (click)="deleteUser(usuario)" class="text-red-600">Eliminar</button>
+          </div>
+        </li>
+      </ul>
+      <button
+        (click)="createUser()"
+        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mt-4"
+      >
+        Registrar Nuevo Usuario
+      </button>
+    </div>
   </div>
 </div>

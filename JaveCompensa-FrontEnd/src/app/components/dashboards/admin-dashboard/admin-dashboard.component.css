@@ -1,0 +1,31 @@
+.bg-white {
+  background-color: #ffffff;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.text-gray-800 {
+  color: #1f2937;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.bg-blue-600:hover {
+  background-color: #2563eb;
+}
+
+.bg-green-600:hover {
+  background-color: #16a34a;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}

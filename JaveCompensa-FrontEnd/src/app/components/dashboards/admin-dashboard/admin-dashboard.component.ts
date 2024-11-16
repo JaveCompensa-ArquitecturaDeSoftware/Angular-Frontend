@@ -1,61 +1,96 @@
-import { Component } from '@angular/core';
-import {NgForOf} from '@angular/common';
-
-interface Service {
-  id: number;
-  name: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { KeycloakService } from '../../../authentication/keycloak/keycloak.service';
+import { UserProfile } from '../../../authentication/keycloak/user-profile';
 
 @Component({
   selector: 'app-admin-dashboard',
-  standalone: true,
-  imports: [
-    NgForOf
-  ],
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
-export class AdminDashboardComponent {
-  services: Service[] = [
-    { id: 1, name: 'Tennis' },
-    { id: 2, name: 'Cancha de Fútbol' },
-    { id: 3, name: 'Piscina' },
-    { id: 4, name: 'Cancha de Tejo' },
-    { id: 5, name: 'Cancha de Squash' },
-    { id: 6, name: 'Cancha de Baloncesto' },
-    { id: 7, name: 'Cancha de Voleibol' },
-    { id: 8, name: 'Cancha de Tenis de Mesa' },
-    { id: 9, name: 'Cancha de Fútbol 5' },
-    { id: 10, name: 'Cancha de Fútbol 7' },
-    { id: 11, name: 'Cancha de Fútbol 11' },
-    { id: 12, name: 'Cancha de Balonmano' },
-    { id: 13, name: 'Cancha de Fútbol Sala' },
-    { id: 14, name: 'Cancha de Baloncesto 3x3' },
-    { id: 15, name: 'Salón de Juegos' },
-    { id: 16, name: 'Gimnasio' },
-    { id: 17, name: 'Pista de Atletismo' },
-    { id: 18, name: 'Pista de Patinaje' },
-    { id: 19, name: 'Pista de Skateboarding' },
-    { id: 20, name: 'Pista de BMX' },
-    { id: 21, name: 'Pista de Ciclismo' },
-    { id: 22, name: 'Pista de Karting' },
-    { id: 23, name: 'Pista de Carreras' },
-    { id: 24, name: 'Pista de Patinaje de Velocidad' },
-    { id: 25, name: 'Pista de Patinaje Artístico' },
-    { id: 26, name: 'Pista de Patinaje de Hockey' },
-    { id: 27, name: 'Pista de Patinaje sobre Hielo' },
-  ];
+export class AdminDashboardComponent implements OnInit {
+  userProfile: UserProfile | undefined;
 
-  // Métodos de ejemplo para los botones
-  addService() {
-    alert('Función para agregar servicio.');
+  searchEvents = '';
+  searchInstallations = '';
+  searchUsers = '';
+
+  events = [{ name: 'Concierto de Rock' }, { name: 'Feria Gastronómica' }];
+  installations = [{ name: 'Piscina Olímpica' }, { name: 'Cancha de Tenis' }];
+  users = [{ name: 'Juan Pérez' }, { name: 'María López' }];
+
+  constructor(private keycloakService: KeycloakService) {}
+
+  ngOnInit(): void {
+    this.userProfile = this.keycloakService.profile;
   }
 
-  editService(service: Service) {
-    alert(`Función para editar el servicio: ${service.name}`);
+  viewReports() {
+    alert('Botón de ver reportes');
   }
 
-  deleteService(service: Service) {
-    alert(`Función para eliminar el servicio: ${service.name}`);
+  filteredEvents() {
+    return this.events.filter(event =>
+      event.name.toLowerCase().includes(this.searchEvents.toLowerCase())
+    );
+  }
+
+  filteredInstallations() {
+    return this.installations.filter(installation =>
+      installation.name.toLowerCase().includes(this.searchInstallations.toLowerCase())
+    );
+  }
+
+  filteredUsers() {
+    return this.users.filter(user =>
+      user.name.toLowerCase().includes(this.searchUsers.toLowerCase())
+    );
+  }
+
+  viewEvent(event: any) {
+    alert(`Ver detalles del evento: ${event.name}`);
+  }
+
+  editEvent(event: any) {
+    alert(`Editar evento: ${event.name}`);
+  }
+
+  deleteEvent(event: any) {
+    alert(`Eliminar evento: ${event.name}`);
+  }
+
+  createEvent() {
+    alert('Crear nuevo evento');
+  }
+
+  viewInstallation(installation: any) {
+    alert(`Ver detalles de la instalación: ${installation.name}`);
+  }
+
+  editInstallation(installation: any) {
+    alert(`Editar instalación: ${installation.name}`);
+  }
+
+  deleteInstallation(installation: any) {
+    alert(`Eliminar instalación: ${installation.name}`);
+  }
+
+  createInstallation() {
+    alert('Crear nueva instalación');
+  }
+
+  viewUser(user: any) {
+    alert(`Ver detalles del usuario: ${user.name}`);
+  }
+
+  editUser(user: any) {
+    alert(`Editar usuario: ${user.name}`);
+  }
+
+  deleteUser(user: any) {
+    alert(`Eliminar usuario: ${user.name}`);
+  }
+
+  createUser() {
+    alert('Registrar nuevo usuario');
   }
 }

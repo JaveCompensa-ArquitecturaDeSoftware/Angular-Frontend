@@ -27,6 +27,7 @@ export function kcFactory(kcService: KeycloakService){
 }
 @NgModule({
   declarations: [
+    AdminDashboardComponent,
     AppComponent,
     HomeComponent,
     NavBarComponent,
@@ -46,8 +47,7 @@ export function kcFactory(kcService: KeycloakService){
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
-    AdminDashboardComponent
+    FormsModule
   ],
   providers: [
     HttpClient,
