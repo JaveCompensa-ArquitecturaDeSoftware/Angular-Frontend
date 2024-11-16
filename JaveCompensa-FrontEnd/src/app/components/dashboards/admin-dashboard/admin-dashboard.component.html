@@ -1,3 +1,6 @@
+<!-- Navbar -->
+<app-nav-bar></app-nav-bar>
+
 <div class="main-content bg-gray-100 min-h-screen">
   <!-- Panel del Administrador -->
   <div class="bg-gray-900 text-white p-6 flex items-center justify-between pt-28">
@@ -14,9 +17,9 @@
     </div>
     <button
       (click)="viewReports()"
-      class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold transition duration-300"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold transition duration-300 flex items-center gap-2"
     >
-      Ver Reportes
+      <i class="pi pi-chart-line"></i> Ver Reportes
     </button>
   </div>
 
@@ -40,10 +43,16 @@
         >
           <div class="flex justify-between">
             <span>{{ evento.name }}</span>
-            <div class="space-x-2">
-              <button (click)="viewEvent(evento)" class="text-blue-600">Ver</button>
-              <button (click)="editEvent(evento)" class="text-yellow-600">Editar</button>
-              <button (click)="deleteEvent(evento)" class="text-red-600">Eliminar</button>
+            <div class="space-x-2 flex">
+              <button (click)="viewEvent(evento)" class="text-blue-600 flex items-center gap-1">
+                <i class="pi pi-eye"></i> Ver
+              </button>
+              <button (click)="editEvent(evento)" class="text-yellow-600 flex items-center gap-1">
+                <i class="pi pi-pencil"></i> Editar
+              </button>
+              <button (click)="deleteEvent(evento)" class="text-red-600 flex items-center gap-1">
+                <i class="pi pi-trash"></i> Eliminar
+              </button>
             </div>
           </div>
           <p class="text-sm text-gray-600">
@@ -54,9 +63,9 @@
       </ul>
       <button
         (click)="createEvent()"
-        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mt-4"
+        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mt-4 flex items-center justify-center gap-2"
       >
-        Crear Nuevo Evento
+        <i class="pi pi-plus-circle"></i> Crear Nuevo Evento
       </button>
     </div>
 
@@ -78,10 +87,16 @@
         >
           <div class="flex justify-between">
             <span>{{ instalacion.name }}</span>
-            <div class="space-x-2">
-              <button (click)="viewInstallation(instalacion)" class="text-blue-600">Ver</button>
-              <button (click)="editInstallation(instalacion)" class="text-yellow-600">Editar</button>
-              <button (click)="deleteInstallation(instalacion)" class="text-red-600">Eliminar</button>
+            <div class="space-x-2 flex">
+              <button (click)="viewInstallation(instalacion)" class="text-blue-600 flex items-center gap-1">
+                <i class="pi pi-eye"></i> Ver
+              </button>
+              <button (click)="editInstallation(instalacion)" class="text-yellow-600 flex items-center gap-1">
+                <i class="pi pi-pencil"></i> Editar
+              </button>
+              <button (click)="deleteInstallation(instalacion)" class="text-red-600 flex items-center gap-1">
+                <i class="pi pi-trash"></i> Eliminar
+              </button>
             </div>
           </div>
           <p class="text-sm text-gray-600">
@@ -92,9 +107,9 @@
       </ul>
       <button
         (click)="createInstallation()"
-        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mt-4"
+        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mt-4 flex items-center justify-center gap-2"
       >
-        Crear Nueva Instalación
+        <i class="pi pi-plus-circle"></i> Crear Nueva Instalación
       </button>
     </div>
 
@@ -116,10 +131,16 @@
         >
           <div class="flex justify-between">
             <span>{{ usuario.name }}</span>
-            <div class="space-x-2">
-              <button (click)="viewUser(usuario)" class="text-blue-600">Ver</button>
-              <button (click)="editUser(usuario)" class="text-yellow-600">Editar</button>
-              <button (click)="deleteUser(usuario)" class="text-red-600">Eliminar</button>
+            <div class="space-x-2 flex">
+              <button (click)="viewUser(usuario)" class="text-blue-600 flex items-center gap-1">
+                <i class="pi pi-eye"></i> Ver
+              </button>
+              <button (click)="editUser(usuario)" class="text-yellow-600 flex items-center gap-1">
+                <i class="pi pi-pencil"></i> Editar
+              </button>
+              <button (click)="deleteUser(usuario)" class="text-red-600 flex items-center gap-1">
+                <i class="pi pi-trash"></i> Eliminar
+              </button>
             </div>
           </div>
           <p class="text-sm text-gray-600">
@@ -129,9 +150,9 @@
       </ul>
       <button
         (click)="createUser()"
-        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mt-4"
+        class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md mt-4 flex items-center justify-center gap-2"
       >
-        Registrar Nuevo Usuario
+        <i class="pi pi-user-plus"></i> Registrar Nuevo Usuario
       </button>
     </div>
   </div>
