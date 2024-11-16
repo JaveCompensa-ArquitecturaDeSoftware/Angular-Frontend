@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import {SedesMenuComponent} from "./components/menus/sedes-menu/sedes-menu.component";
 import {ContactPageComponent} from "./components/contact-page/contact-page.component";
 import {InstalacionesMenuComponent} from "./components/menus/instalaciones-menu/instalaciones-menu.component";
+import {BookingFormComponent} from "./components/booking-form/booking-form.component";
 
 const routes: Routes = [
   { path: 'error', component: PaginaErrorComponent},
@@ -18,6 +19,9 @@ const routes: Routes = [
 
   /* Pagina donde se listan las instalaciones de una sede */
   { path: 'instalaciones-menu', component: InstalacionesMenuComponent },
+
+  /* Pagina para confirmar la reserva */
+  { path: 'booking-form', component: BookingFormComponent },
 
   /* Pagina de contacto */
   { path: 'contact', component: ContactPageComponent },

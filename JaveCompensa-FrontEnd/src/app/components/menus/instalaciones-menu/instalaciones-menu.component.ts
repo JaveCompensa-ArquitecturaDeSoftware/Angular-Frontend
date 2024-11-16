@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-instalaciones-menu',
   templateUrl: './instalaciones-menu.component.html',
   styleUrls: ['./instalaciones-menu.component.css']
 })
-export class InstalacionesMenuComponent implements OnInit{
-
+export class InstalacionesMenuComponent implements OnInit {
   sedeName: string | null = null;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.sedeName = params['sede'];
     });
   }
-
 
   // Lista de instalaciones
   instalaciones = [
@@ -53,5 +51,19 @@ export class InstalacionesMenuComponent implements OnInit{
   // Seleccionar una instalación
   selectInstalacion(instalacion: any) {
     this.selectedInstalacion = instalacion;
+  }
+
+  // Redirigir al formulario de reserva
+  goToBookingForm() {
+    if (this.selectedInstalacion) {
+      this.router.navigate(['/booking-form'], {
+        queryParams: {
+          sede: this.sedeName,
+          instalacion: this.selectedInstalacion.name,
+        },
+      });
+    } else {
+      alert('Por favor, selecciona una instalación primero.');
+    }
   }
 }

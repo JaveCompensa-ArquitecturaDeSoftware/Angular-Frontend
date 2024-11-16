@@ -20,6 +20,7 @@ import { FooterComponent } from './components/extras/footer/footer.component';
 import { SedesMenuComponent } from './components/menus/sedes-menu/sedes-menu.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { InstalacionesMenuComponent } from './components/menus/instalaciones-menu/instalaciones-menu.component';
+import { BookingFormComponent } from './components/booking-form/booking-form.component';
 
 export function kcFactory(kcService: KeycloakService){
   return () => kcService.init();
@@ -38,6 +39,7 @@ export function kcFactory(kcService: KeycloakService){
     SedesMenuComponent,
     ContactPageComponent,
     InstalacionesMenuComponent,
+    BookingFormComponent,
   ],
   imports: [
     BrowserModule,
