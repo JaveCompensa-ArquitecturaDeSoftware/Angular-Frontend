@@ -7,6 +7,5 @@
       <excludeFolder url="file://$MODULE_DIR$/JaveCompensa-FrontEnd/tmp" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="boldPaymentButton" level="application" />
   </component>
 </module>
