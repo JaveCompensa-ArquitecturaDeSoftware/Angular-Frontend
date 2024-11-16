@@ -38,15 +38,7 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
       occupation: "Técnico en Sistemas",
       image: "assets/img/user5.jpg",
       backgroundImage: "assets/img/testimonials/JuanDiego.png"
-    },
-    {
-      text: "Las clases en javecompensa me han ayudado a mejorar mis habilidades de deportes",
-      name: "Daniel Mejia",
-      occupation: "Tecnico en sistemas",
-      image: "assets/img/user3.jpg",
-      backgroundImage: "assets/img/testimonials/danielmejia.jpeg"
     }
-    
   ];
 
   currentIndex = 0;
